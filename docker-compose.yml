@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # PostgreSQL（開発・本番デモ共通）
+  postgres:
+    image: postgres:15
+    container_name: django_tutorial_postgres
+    environment:
+      POSTGRES_DB: ${DB_NAME:-djangotutorial}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # Django App（Cloudデモ用）
+  web:
+    build: .
+    container_name: django_tutorial_web
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             gunicorn mysite.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      - DEBUG=${DEBUG:-False}
+      - DB_HOST=postgres
+      - DB_NAME=${DB_NAME:-djangotutorial}
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASSWORD=${DB_PASSWORD:-postgres}
+      - DB_PORT=5432
+    profiles:
+      - production
+
+volumes:
+  postgres_data:
