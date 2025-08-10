@@ -6,6 +6,12 @@
   },
   "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && source ~/.profile && uv sync",
   "forwardPorts": [8000],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
