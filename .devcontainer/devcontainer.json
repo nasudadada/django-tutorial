@@ -2,10 +2,9 @@
   "name": "Django Tutorial",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
   "features": {
-    "ghcr.io/astral-sh/uv-devcontainer-features/uv:latest": {},
     "ghcr.io/devcontainers/features/git:1": {}
   },
-  "postCreateCommand": "uv sync",
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && source ~/.profile && uv sync",
   "forwardPorts": [8000],
   "customizations": {
     "vscode": {
