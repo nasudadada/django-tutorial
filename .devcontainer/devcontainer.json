@@ -1,0 +1,19 @@
+{
+  "name": "Django Tutorial",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/astral-sh/uv-devcontainer-features/uv:latest": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "postCreateCommand": "uv sync",
+  "forwardPorts": [8000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.flake8",
+        "charliermarsh.ruff"
+      ]
+    }
+  }
+}

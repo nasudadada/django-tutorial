@@ -1,0 +1,15 @@
+[project]
+name = "django-tutorial"
+version = "0.1.0"
+description = "Django tutorial project"
+requires-python = ">=3.12"
+dependencies = [
+    "Django>=5.2,<5.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
