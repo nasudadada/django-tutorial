@@ -2,10 +2,11 @@
   "name": "Django Tutorial",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && source ~/.profile && uv sync",
-  "forwardPorts": [8000],
+  "postCreateCommand": "bash -c 'curl -LsSf https://astral.sh/uv/install.sh | sh && source ~/.profile && uv sync && docker-compose up postgres -d'",
+  "forwardPorts": [8000, 5432],
   "remoteEnv": {
     "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}"
   },
