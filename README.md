@@ -18,7 +18,7 @@ Django公式チュートリアルに基づいた投票アプリケーション�
 
 - **Python**: 3.12
 - **Django**: 5.2
-- **データベース**: SQLite（開発）/ PostgreSQL（本番）
+- **データベース**: PostgreSQL
 - **パッケージマネージャー**: uv
 - **コンテナ**: Docker & Docker Compose
 
@@ -102,7 +102,7 @@ uv run python manage.py createsuperuser
 
 ## VS Code / Cursor でのデバッグ
 
-このプロジェクトは VS Code / Cursor でのデバッグが簡単に行えるよう設定済みです。
+このプロジェクトは VS Code / Cursor でのデバッグが簡単に行えるよう設定しています。
 
 ### デバッグ手順
 
