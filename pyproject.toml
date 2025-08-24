@@ -16,4 +16,6 @@ dependencies = [
 # build-backend = "hatchling.build"
 
 [tool.uv]
-dev-dependencies = []
+dev-dependencies = [
+    "django-debug-toolbar>=6.0.0",
+]

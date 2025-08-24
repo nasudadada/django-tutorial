@@ -34,7 +34,9 @@ DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes", "on")
 ALLOWED_HOSTS_ENV = os.getenv("ALLOWED_HOSTS", "")
 ALLOWED_HOSTS = ALLOWED_HOSTS_ENV.split(",") if ALLOWED_HOSTS_ENV else []
 
-
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -55,6 +58,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "mysite.urls"
