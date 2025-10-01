@@ -1,26 +1,30 @@
-# Django Tutorial - Polls App
+# Django Tutorial - Polls App️
 
 Django公式チュートリアルに基づいた投票アプリケーションです。
 
 ## 概要
 
-このプロジェクトは、Djangoの基本的な機能を学習するための投票（Polls）アプリケーションです。質問と選択肢を作成し、投票機能を提供します。
+このプロジェクトは、Djangoの基本的な機能を学習するための投票（Polls）アプリケーションです。質問と選択肢を作成し、投票機能を提供するWebアプリケーションです。
 
 ## 機能
 
-- 質問の一覧表示
+- 質問の一覧表示（未来の質問は非表示）
 - 質問の詳細表示と選択肢の確認
-- 投票機能（開発中）
-- 投票結果の表示（開発中）
-- 管理画面での質問管理
+- 投票機能（重複投票防止、エラーハンドリング）
+- 投票結果の表示
+- 高度な管理画面（インライン編集、検索、フィルタリング）
+- 静的ファイル（CSS、画像）
+- 包括的なテストスイート
+- デバッグツールバー
 
 ## 技術スタック
 
 - **Python**: 3.12
-- **Django**: 5.2
+- **Django**: 5.2.5
 - **データベース**: PostgreSQL
 - **パッケージマネージャー**: uv
 - **コンテナ**: Docker & Docker Compose
+
 
 ## セットアップ
 
@@ -154,23 +158,13 @@ django-tutorial/
 └── manage.py             # Django管理コマンド
 ```
 
-## 開発状況
 
-- [x] プロジェクト初期設定
-- [x] Pollsアプリ作成
-- [x] モデル定義（Question, Choice）
-- [x] 管理画面設定
-- [x] ビューとテンプレート（index, detail）
-- [x] URLルーティング設定
-- [ ] 投票機能の実装
-- [ ] 結果表示機能
-- [ ] スタイリングの改善
-- [ ] テストの追加
-
-## 参考
+## 参考リンク
 
 - [Django公式チュートリアル](https://docs.djangoproject.com/ja/5.2/intro/tutorial01/)
 - [Django公式ドキュメント](https://docs.djangoproject.com/ja/5.2/)
+- [Django Debug Toolbar](https://django-debug-toolbar.readthedocs.io/)
+- [uv - Python パッケージマネージャー](https://docs.astral.sh/uv/)
 
 ## ライセンス
 
